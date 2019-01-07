@@ -17,7 +17,7 @@ services:
   ubuntu_essentials:
       build: 
         context: ./
-        dockerfile: Ubuntu_Essentials.DockerFile
+        dockerfile: DockerFile
       container_name: bionic_essentials_ssh
       links:
       - ubuntu_mariadb
