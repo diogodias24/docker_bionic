@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   ubuntu_mariadb:
@@ -19,6 +19,7 @@ services:
         context: ./
         dockerfile: Dockerfile
       container_name: bionic_essentials_ssh
+      #image: diogodias2/bionic_essentials
       links:
       - ubuntu_mariadb
       ports:
@@ -28,5 +29,6 @@ services:
         - "3306:33060"
       stdin_open: true
       tty: true
+      
    
 
