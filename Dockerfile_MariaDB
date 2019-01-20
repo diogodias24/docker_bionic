@@ -1,0 +1,12 @@
+# ADDED SUPPORT TO SEED THE DATABASE WITH A SQL FILE IF HE EXISTS
+FROM mariadb
+
+# Add a database and the user mysql
+ENV MYSQL_DATABASE teste
+ENV MYSQL_USER=teste
+ENV MYSQL_PASSWORD=teste
+
+# All scripts in docker-entrypoint-initdb.d/ are automatically
+# executed during container startup
+COPY ./db-sql/ /docker-entrypoint-initdb.d/
+

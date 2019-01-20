@@ -24,6 +24,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	dialog apt-utils \
 	python-pip \
 	&& update-locale LANG=en_US.UTF-8 \
+	&& apt-get autoremove -y \
 	&& useradd -ms /bin/bash ubuntu && echo "ubuntu:ubuntu" | chpasswd && adduser ubuntu sudo \
 	&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
